@@ -27,13 +27,13 @@ jobs:
       with:
         dotnet-version: 5.0.100-rc.1.20452.10
     - name: Install dependencies
-      run: dotnet restore
+      run: dotnet restore src/EventBus.sln
     - name: Build
-      run: dotnet build --configuration Release --no-restore
+      run: dotnet build src/EventBus.sln --configuration Release --no-restore
     - name: Test
-      run: dotnet test --no-restore --verbosity normal
+      run: dotnet test src/EventBus.sln --no-restore --verbosity normal
     - name: Pack
-      run: dotnet pack --configuration Release --no-restore --output artifacts --include-symbols --include-source --verbosity normal
+      run: dotnet pack src/EventBus.sln --configuration Release --no-restore --output artifacts --include-symbols --include-source --verbosity normal
     - name: Upload Artifacts
       if: matrix.os == 'ubuntu-latest'
       uses: actions/upload-artifact@v2

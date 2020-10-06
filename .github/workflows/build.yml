@@ -1,0 +1,56 @@
+name: Build
+
+on:
+  push:
+    branches: 
+    - master
+  pull_request:
+    branches: 
+    - master
+
+env:
+  # Stop wasting time caching packages
+  DOTNET_SKIP_FIRST_TIME_EXPERIENCE: true
+  # Disable sending usage data to Microsoft
+  DOTNET_CLI_TELEMETRY_OPTOUT: true
+
+jobs:
+  build:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ ubuntu-latest, windows-latest, macos-latest ]
+    steps:
+    - uses: actions/checkout@v2
+    - name: Setup .NET Core
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 5.0.100-rc.1.20452.10
+    - name: Install dependencies
+      run: dotnet restore
+    - name: Build
+      run: dotnet build --configuration Release --no-restore
+    - name: Test
+      run: dotnet test --no-restore --verbosity normal
+    - name: Pack
+      run: dotnet pack --configuration Release --no-restore --output artifacts --include-symbols --include-source --verbosity normal
+    - name: Upload Artifacts
+      if: matrix.os == 'ubuntu-latest'
+      uses: actions/upload-artifact@v2
+      with:
+        name: nupkg
+        path: artifacts/*.nupkg
+  
+  publish:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download Artifacts
+        uses: actions/download-artifact@v1
+        with:
+          name: nupkg
+      - name: Push to NuGet Feed
+        run: |
+          Get-ChildItem ./nupkg -Filter *.nupkg |
+          ForEach-Object { dotnet nuget push $_ -k ${{ secrets.CLOUDSMITH_API_KEY }} -s https://nuget.cloudsmith.io/helixsoftwarefoundation/preview/v3/index.json --skip-duplicate --no-symbols true }
+        shell: pwsh

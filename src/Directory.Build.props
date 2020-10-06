@@ -1,0 +1,20 @@
+<Project>
+  <PropertyGroup>
+    <LangVersion>Preview</LangVersion>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <Product>HCS Event Bus</Product>
+    <Copyright>© Helix Software Foundation and Contributors. All rights reserved.</Copyright>
+    <NeutralLanguage>en-US</NeutralLanguage>
+    <PackageLicenseType>MIT</PackageLicenseType>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <RepositoryRoot>$(MSBuildThisFileDirectory)</RepositoryRoot>
+    <PackageProjectUrl>https://github.com/HelixSoftwareFoundation/hcs-eventbus</PackageProjectUrl>
+    <PackageLicenseUrl>https://github.com/HelixSoftwareFoundation/hcs-eventbus/blob/master/LICENSE</PackageLicenseUrl>
+    <PackageTags>hcs;evenbus</PackageTags>
+  </PropertyGroup>
+
+  <Import Project="..\eng\Versions.props" />
+
+</Project>

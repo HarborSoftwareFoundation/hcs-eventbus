@@ -1,4 +1,4 @@
-﻿namespace Helix.Hcs.EventBus
+﻿namespace Harbor.Hcs.EventBus
 {
     public record IntegrationEvent
     {

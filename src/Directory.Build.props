@@ -4,15 +4,15 @@
   </PropertyGroup>
 
   <PropertyGroup>
-    <Product>HCS Event Bus</Product>
+    <Product>PCS Event Bus</Product>
     <Copyright>© Harbor Software Foundation and Contributors. All rights reserved.</Copyright>
     <NeutralLanguage>en-US</NeutralLanguage>
     <PackageLicenseType>MIT</PackageLicenseType>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     <RepositoryRoot>$(MSBuildThisFileDirectory)</RepositoryRoot>
-    <PackageProjectUrl>https://github.com/HarborSoftwareFoundation/hcs-eventbus</PackageProjectUrl>
-    <PackageLicenseUrl>https://github.com/HarborSoftwareFoundation/hcs-eventbus/blob/master/LICENSE</PackageLicenseUrl>
-    <PackageTags>hcs;evenbus</PackageTags>
+    <PackageProjectUrl>https://github.com/Parusnik/pcs-eventbus</PackageProjectUrl>
+    <PackageLicenseUrl>https://github.com/Parusnik/pcs-eventbus/blob/master/LICENSE</PackageLicenseUrl>
+    <PackageTags>pcs;evenbus</PackageTags>
   </PropertyGroup>
 
   <Import Project="..\eng\Versions.props" />

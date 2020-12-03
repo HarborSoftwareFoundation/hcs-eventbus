@@ -2,8 +2,8 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.1</TargetFramework>
-    <AssemblyName>Harbor.Hcs.EventBus.Abstractions</AssemblyName>
-    <RootNamespace>Harbor.Hcs.EventBus</RootNamespace>
+    <AssemblyName>Parusnik.Pcs.EventBus.Abstractions</AssemblyName>
+    <RootNamespace>Parusnik.Pcs.EventBus</RootNamespace>
     <LangVersion>preview</LangVersion>
   </PropertyGroup>
 

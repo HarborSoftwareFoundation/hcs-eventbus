@@ -1,4 +1,4 @@
-﻿namespace Harbor.Hcs.EventBus
+﻿namespace Parusnik.Pcs.EventBus
 {
     public record IntegrationEvent
     {

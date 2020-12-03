@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.30524.135
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{0E1142CA-2A9C-4761-B6C6-A3FFD8636FAA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pcs.EventBus.Abstractions", "src\Pcs.EventBus.Abstractions\Hcs.EventBus.Abstractions.csproj", "{95E9F87D-3C8C-4CAE-9C83-E3BD2DAD6A95}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pcs.EventBus.Abstractions", "src\Pcs.EventBus.Abstractions\Pcs.EventBus.Abstractions.csproj", "{95E9F87D-3C8C-4CAE-9C83-E3BD2DAD6A95}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
